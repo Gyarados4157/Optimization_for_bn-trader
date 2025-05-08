@@ -363,13 +363,13 @@ if st.sidebar.button("🚀 运行优化", use_container_width=True):
             try:
                 population = Population(valid_portfolio_instances)
                 summary_df = population.summary(formatted=True)
-                metrics_to_check = ['Annualized Mean', 'Max Drawdown', 'Sharpe Ratio']
+                metrics_to_check = ['Annualized Mean', 'MAX Drawdown', 'Sharpe Ratio']
                 actual_metrics_in_summary = summary_df.index.tolist()
                 final_metrics_to_display = []
                 for m_check in metrics_to_check:
                     if m_check in actual_metrics_in_summary:
                         final_metrics_to_display.append(m_check)
-                    elif m_check == "MAX Drawdown" and "Max Drawdown" in actual_metrics_in_summary: # skfolio uses "Max Drawdown"
+                    elif m_check == "MAX Drawdown" and "Max Drawdown" in actual_metrics_in_summary: # 
                         final_metrics_to_display.append("Max Drawdown")
                 
                 if final_metrics_to_display:
